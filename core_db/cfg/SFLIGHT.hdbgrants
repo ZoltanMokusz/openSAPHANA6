@@ -1,0 +1,14 @@
+{
+  "hdi-sflight-service": {
+    "object_owner": {
+      "roles": [
+        "MODELING"
+      ]
+    },
+    "application_user": {
+      "roles": [
+        "MODELING"
+      ]
+    }
+  }
+}

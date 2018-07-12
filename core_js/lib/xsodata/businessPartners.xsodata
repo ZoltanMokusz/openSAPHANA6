@@ -1,0 +1,19 @@
+// To define an XS OData service, you can use the following syntax.
+// In the example below Aggregation, Modification and Association are defined.
+
+service  { 
+
+// Aggregation example: A view with ID Amount, Month, and Year columns created in openSAPHANA6.core_js.lib.xsodata package.
+// Call http://host:port/package/file.xsodata/MyView?$select=Year,Amount
+
+   "MD.BusinessPartner"             // Table or View  
+   as "BusinessPartners"                             // Optional entity alias     
+   ;    // Additional aggregation per column are MIN, MAX, AVG
+        
+
+// Modification exit example: A customer table and jsexit.xsjslib created in openSAPHANA6.core_js.lib.xsodata package.
+// Update and create are performed by jsexit.xsjslib functions instead of direct XSOData modifications,
+// and delete is forbidden
+
+ 
+}  
