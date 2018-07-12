@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="core.models::CVD_BUSINESS_PARTNER" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_BUSINESS_PARTNER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MD.BusinessPartner">
+    <resourceUri>MD.BusinessPartner</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="PARTNERID">
+        <descriptions defaultDescription="Partner ID"/>
+      </viewAttribute>
+      <viewAttribute id="PARTNERROLE">
+        <descriptions defaultDescription="Partner Role - Customer or Supplier"/>
+      </viewAttribute>
+      <viewAttribute id="EMAILADDRESS">
+        <descriptions defaultDescription="Email Address"/>
+      </viewAttribute>
+      <viewAttribute id="PHONENUMBER">
+        <descriptions defaultDescription="Phone Number"/>
+      </viewAttribute>
+      <viewAttribute id="FAXNUMBER">
+        <descriptions defaultDescription="Fax Number"/>
+      </viewAttribute>
+      <viewAttribute id="WEBADDRESS">
+        <descriptions defaultDescription="Web Site Address"/>
+      </viewAttribute>
+      <viewAttribute id="ADDRESSES_ADDRESSID">
+        <descriptions defaultDescription="ADDRESSES_ADDRESSID"/>
+      </viewAttribute>
+      <viewAttribute id="COMPANYNAME">
+        <descriptions defaultDescription="Company Name"/>
+      </viewAttribute>
+      <viewAttribute id="LEGALFORM">
+        <descriptions defaultDescription="Legal Form"/>
+      </viewAttribute>
+      <viewAttribute id="HISTORY_CREATEDBY_EMPLOYEEID">
+        <descriptions defaultDescription="HISTORY_CREATEDBY_EMPLOYEEID"/>
+      </viewAttribute>
+      <viewAttribute id="HISTORY_CREATEDAT">
+        <descriptions defaultDescription="Created Date"/>
+      </viewAttribute>
+      <viewAttribute id="HISTORY_CHANGEDBY_EMPLOYEEID">
+        <descriptions defaultDescription="HISTORY_CHANGEDBY_EMPLOYEEID"/>
+      </viewAttribute>
+      <viewAttribute id="HISTORY_CHANGEDAT">
+        <descriptions defaultDescription="Changed Date"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENCY">
+        <descriptions defaultDescription="Request Document Currency"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="MD.BusinessPartner">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERROLE" source="PARTNERROLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMAILADDRESS" source="EMAILADDRESS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PHONENUMBER" source="PHONENUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FAXNUMBER" source="FAXNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBADDRESS" source="WEBADDRESS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDRESSES_ADDRESSID" source="ADDRESSES.ADDRESSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYNAME" source="COMPANYNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGALFORM" source="LEGALFORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HISTORY_CREATEDBY_EMPLOYEEID" source="HISTORY.CREATEDBY.EMPLOYEEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HISTORY_CREATEDAT" source="HISTORY.CREATEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HISTORY_CHANGEDBY_EMPLOYEEID" source="HISTORY.CHANGEDBY.EMPLOYEEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HISTORY_CHANGEDAT" source="HISTORY.CHANGEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PARTNERID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PARTNERID"/>
+    </attribute>
+    <attribute id="PARTNERROLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner Role - Customer or Supplier"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PARTNERROLE"/>
+    </attribute>
+    <attribute id="EMAILADDRESS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Email Address"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EMAILADDRESS"/>
+    </attribute>
+    <attribute id="PHONENUMBER" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Phone Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PHONENUMBER"/>
+    </attribute>
+    <attribute id="FAXNUMBER" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fax Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FAXNUMBER"/>
+    </attribute>
+    <attribute id="WEBADDRESS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Web Site Address"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WEBADDRESS"/>
+    </attribute>
+    <attribute id="ADDRESSES_ADDRESSID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADDRESSES_ADDRESSID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ADDRESSES_ADDRESSID"/>
+    </attribute>
+    <attribute id="COMPANYNAME" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMPANYNAME"/>
+    </attribute>
+    <attribute id="LEGALFORM" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Form"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LEGALFORM"/>
+    </attribute>
+    <attribute id="HISTORY_CREATEDBY_EMPLOYEEID" order="10" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="HISTORY_CREATEDBY_EMPLOYEEID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HISTORY_CREATEDBY_EMPLOYEEID"/>
+    </attribute>
+    <attribute id="HISTORY_CREATEDAT" order="11" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="Created Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HISTORY_CREATEDAT"/>
+    </attribute>
+    <attribute id="HISTORY_CHANGEDBY_EMPLOYEEID" order="12" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="HISTORY_CHANGEDBY_EMPLOYEEID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HISTORY_CHANGEDBY_EMPLOYEEID"/>
+    </attribute>
+    <attribute id="HISTORY_CHANGEDAT" order="13" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="Changed Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HISTORY_CHANGEDAT"/>
+    </attribute>
+    <attribute id="CURRENCY" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Request Document Currency"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENCY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="184"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
