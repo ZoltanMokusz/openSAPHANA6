@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="core.models::PURCHASE_ORDERS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="PURCHASE_ORDERS with CC">
+<descriptions defaultDescription="PURCHASE_ORDERS with Currency Conversion">
   <comment text="PURCHASE_ORDERS with CC"/>
 </descriptions>
 <localVariables>
@@ -72,7 +72,6 @@
       <descriptions defaultDescription="Document Currency"/>
       <keyMapping columnObjectName="PurchaseOrders" columnName="CURRENCY"/>
     </attribute>
-  
     <attribute id="PRODUCT_PRODUCTID$local">
       <descriptions defaultDescription="PRODUCT_PRODUCTID"/>
       <keyMapping columnObjectName="PurchaseOrders" columnName="PRODUCT_PRODUCTID"/>
