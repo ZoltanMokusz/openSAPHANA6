@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="core.models::CVD_ADDRESS" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Address"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="core.models::CVD_BUSINESS_PARTNER">
+    <resourceUri>core.models::CVD_BUSINESS_PARTNER</resourceUri>
+  </DataSource>
+  <DataSource id="MD.Addresses">
+    <resourceUri>MD.Addresses</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="BP_address" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNERID">
+        <descriptions defaultDescription="Partner ID"/>
+      </viewAttribute>
+      <viewAttribute id="EMAILADDRESS">
+        <descriptions defaultDescription="Email Address"/>
+      </viewAttribute>
+      <viewAttribute id="CITY">
+        <descriptions defaultDescription="City"/>
+      </viewAttribute>
+      <viewAttribute id="POSTALCODE">
+        <descriptions defaultDescription="Postal Code"/>
+      </viewAttribute>
+      <viewAttribute id="STREET">
+        <descriptions defaultDescription="Street"/>
+      </viewAttribute>
+      <viewAttribute id="LATITUDE">
+        <descriptions defaultDescription="Geo Latitude"/>
+      </viewAttribute>
+      <viewAttribute id="LONGITUDE">
+        <descriptions defaultDescription="Geo Longitude"/>
+      </viewAttribute>
+      <viewAttribute id="POINT">
+        <descriptions defaultDescription="Geo Point"/>
+      </viewAttribute>
+      <viewAttribute hidden="true" id="JOIN$ADDRESSES_ADDRESSID$ADDRESSID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="core.models::CVD_BUSINESS_PARTNER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMAILADDRESS" source="EMAILADDRESS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADDRESSES_ADDRESSID$ADDRESSID" source="ADDRESSES_ADDRESSID"/>
+    </input>
+    <input node="MD.Addresses">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTALCODE" source="POSTALCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POINT" source="POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADDRESSES_ADDRESSID$ADDRESSID" source="ADDRESSID"/>
+    </input>
+    <joinAttribute name="JOIN$ADDRESSES_ADDRESSID$ADDRESSID"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="BP_address">
+  <attributes>
+    <attribute id="PARTNERID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner ID"/>
+      <keyMapping columnObjectName="BP_address" columnName="PARTNERID"/>
+    </attribute>
+    <attribute id="EMAILADDRESS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Email Address"/>
+      <keyMapping columnObjectName="BP_address" columnName="EMAILADDRESS"/>
+    </attribute>
+    <attribute id="CITY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="BP_address" columnName="CITY"/>
+    </attribute>
+    <attribute id="POSTALCODE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="BP_address" columnName="POSTALCODE"/>
+    </attribute>
+    <attribute id="STREET" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street"/>
+      <keyMapping columnObjectName="BP_address" columnName="STREET"/>
+    </attribute>
+    <attribute id="LATITUDE" order="6" semanticType="geoLocation.latitude" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Geo Latitude"/>
+      <keyMapping columnObjectName="BP_address" columnName="LATITUDE"/>
+    </attribute>
+    <attribute id="LONGITUDE" order="7" semanticType="geoLocation.longitude" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Geo Longitude"/>
+      <keyMapping columnObjectName="BP_address" columnName="LONGITUDE"/>
+    </attribute>
+    <attribute id="POINT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Geo Point"/>
+      <keyMapping columnObjectName="BP_address" columnName="POINT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="BP_address" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="core.models::CVD_BUSINESS_PARTNER" modelObjectNameSpace="BP_address" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="287.931640625"/>
+    </shape>
+    <shape modelObjectName="MD.Addresses" modelObjectNameSpace="BP_address" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="366" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
